@@ -1,7 +1,7 @@
 # Error Ckecking
 # Author: Derek Wu
-# Date: 2024/10/16
-# Version 1
+# Date: 2024/10/25
+# Version 3
 
 # Code that tests that a valid number is entered (V1)
 '''done = False # Boolean variable set to False
@@ -51,7 +51,7 @@ def valid_num(question, low, high):
     while True:
         try:
             response = int(input(question))
-            if low <= response <= high:
+            if low <= response <= high: # if response >= low and respone <= high:
                 break
 
             else:
@@ -60,8 +60,18 @@ def valid_num(question, low, high):
 
         except ValueError:
             print(error)
-    return response
+    return response # make the value stored in the rspone variable availabel outside the loop.
 
 # Main routine
 num_1 = valid_num("Enter a number between 1 and 15:", 1, 15)
-print(f"You entered {num_1}") 
+print(f"You entered {num_1}\n.") 
+num_2 = valid_num("enter a number between 50 and 100", 50, 100)
+print(f"You entered {num_2}\n.") 
+num_3 = valid_num("enter a number between 70 and 80", 70, 80)
+print(f"You entered {num_3}\n.") 
+
+# Multiply the result of num_1, num_2 and num_3
+multiply = num_1 * num_2 * num_3
+print(f" The total of {num_1}, {num_2} and {num_3} is {multiply}.\n")
+
+
